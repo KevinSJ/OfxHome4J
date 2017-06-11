@@ -13,6 +13,11 @@ public class Institution {
 	private String url;
 	@Element(required = false)
 	private String org;
+	
+	private String userName;
+	
+	private String password;
+	
 
 	/**
 	 * @return the name
@@ -29,9 +34,7 @@ public class Institution {
 		this.name = name;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
+	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -43,7 +46,13 @@ public class Institution {
 		if (fid != null)
 			builder.append("fid=").append(fid).append(", ");
 		if (url != null)
-			builder.append("url=").append(url);
+			builder.append("url=").append(url).append(", ");
+		if (org != null)
+			builder.append("org=").append(org).append(", ");
+		if (userName != null)
+			builder.append("userName=").append(userName).append(", ");
+		if (password != null)
+			builder.append("password=").append(password);
 		builder.append("]");
 		return builder.toString();
 	}
@@ -90,6 +99,34 @@ public class Institution {
 	 */
 	public void setOrg(String org) {
 		this.org = org;
+	}
+
+	/**
+	 * @return the userName
+	 */
+	public String getUserName() {
+		return userName;
+	}
+
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * @param userName the userName to set
+	 */
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	/**
+	 * @param password the password to set
+	 */
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }

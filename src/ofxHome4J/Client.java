@@ -1,6 +1,6 @@
 package ofxHome4J;
 
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -9,7 +9,7 @@ import retrofit2.Retrofit;
 import retrofit2.SimpleXmlConverterFactory;
 
 public class Client implements Callback<InstitutionIdListDTO> {
-	private static final String BASE_URL = "http://127.0.0.1:3000/";
+	private static final String BASE_URL = "http://192.168.1.226/";
 
 	public void start() {
 		Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL)
@@ -29,8 +29,8 @@ public class Client implements Callback<InstitutionIdListDTO> {
 	public void onResponse(Call<InstitutionIdListDTO> arg0, Response<InstitutionIdListDTO> response) {
 		if (response.isSuccessful()) {
 			InstitutionIdListDTO list = response.body();
-			list.getInstitutionIds().stream().filter(institut -> institut.getName().contains("Chase"))
-					.forEach(inst -> System.out.println(inst.toString()));
+			list.getInstitutionIds().stream().filter(institut -> institut.getName().contains("Chase")).collect(Collectors.toList());
+			System.exit(0);
 			// list.getInstitutionIds().forEach(institutionId ->
 			// System.out.println(institutionId.toString()));
 		} else {
