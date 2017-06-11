@@ -6,7 +6,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.SimpleXmlConverterFactory;
+import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
 public class Client implements Callback<InstitutionIdListDTO> {
 	private static final String BASE_URL = "http://192.168.1.226/";
