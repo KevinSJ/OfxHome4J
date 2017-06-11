@@ -6,7 +6,7 @@ import javax.annotation.Generated;
  * This is intended to be the client to communicate with the bank through OFX
  * protocol
  * 
- * @author Administrator
+ * @author Kevin
  *
  */
 public class OfxClient {
